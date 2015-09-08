@@ -15,7 +15,7 @@ Issues without a Time To Fix (TTF) remark will take only a few minutes to fix.
 
 1. Possible insert of `nil` into array. `SBSessionEditViewController.m`, method `handleFinishTaskNotification:`
 	
-	```
+	```objc
 	- (void)handleFinishTaskNotification:(NSNotification *)notification {
 	    NSString *potential = notification.object;
 	    
@@ -56,7 +56,7 @@ Issues without a Time To Fix (TTF) remark will take only a few minutes to fix.
 
 5. In line 1166-1174 of `SBDocument.m` the `handleRequestPresentSessionsCreateNewSessionSheetNotification` is registered twice and is also called twice then a session is added. This may have undesirable consequences:
 
-	```
+	```objc
 	    [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(handleRequestPresentSessionsCreateNewSessionSheetNotification:)
                                                  name:SBRequestPresentSessionsCreateNewSessionSheetNotification
